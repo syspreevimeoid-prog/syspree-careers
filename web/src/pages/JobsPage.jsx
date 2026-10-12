@@ -47,9 +47,14 @@ export default function JobsPage({settings}) {
       <main className="mx-auto max-w-4xl px-6 pb-20 pt-12 md:px-0">
         <h2 className="mb-8 font-serif text-4xl font-bold text-gray-900">Current Jobs</h2>
 
-        <FilterBar filters={filters} onChange={setFilters} taxonomy={taxonomy} />
+        <FilterBar
+          filters={filters}
+          onChange={setFilters}
+          taxonomy={taxonomy}
+          onSearch={() => document.getElementById('job-results')?.scrollIntoView({behavior: 'smooth', block: 'start'})}
+        />
 
-        <div className="mt-8" />
+        <div id="job-results" className="scroll-mt-28 pt-8" />
 
         {loadError && <p className="text-sm text-red-600">{loadError}</p>}
         {!jobs && !loadError && <Loader label="Loading jobs…" />}
