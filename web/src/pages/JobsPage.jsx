@@ -44,10 +44,12 @@ export default function JobsPage({settings}) {
         subtext={settings?.heroSubtext}
         contactUrl={settings?.contactUrl}
       />
-      <main className="mx-auto max-w-4xl px-6 pb-20 md:px-0">
+      <main className="mx-auto max-w-4xl px-6 pb-20 pt-12 md:px-0">
+        <h2 className="mb-8 font-serif text-4xl font-bold text-gray-900">Current Jobs</h2>
+
         <FilterBar filters={filters} onChange={setFilters} taxonomy={taxonomy} />
 
-        <h2 className="mt-12 mb-6 font-serif text-3xl font-bold text-gray-900">Current Jobs</h2>
+        <div className="mt-8" />
 
         {loadError && <p className="text-sm text-red-600">{loadError}</p>}
         {!jobs && !loadError && <Loader label="Loading jobs…" />}

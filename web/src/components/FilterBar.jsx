@@ -2,7 +2,7 @@ export default function FilterBar({filters, onChange, taxonomy}) {
   const {keyword, categorySlug, jobTypeSlug, locationSlug} = filters
 
   return (
-    <div className="-mt-14 mx-auto max-w-4xl rounded-xl bg-gray-100 p-6 shadow-sm md:p-8">
+    <div className="mx-auto max-w-4xl rounded-md bg-gray-100 p-6 md:p-8">
       <input
         type="text"
         value={keyword}

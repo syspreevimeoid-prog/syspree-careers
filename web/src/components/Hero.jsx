@@ -36,8 +36,8 @@ export default function Hero({tagline, headingHighlight, headingRest, subtext, c
 
       {/* Diagonal orange divider, recreated with clip-path — no image asset needed */}
       <div
-        className="absolute inset-x-0 bottom-0 h-16 bg-brand-orange"
-        style={{clipPath: 'polygon(0 100%, 50% 0, 100% 100%)'}}
+        className="absolute inset-x-0 bottom-0 h-14 bg-brand-orange md:h-16"
+        style={{clipPath: 'polygon(0 100%, 0 80%, 24% 45%, 35% 60%, 66% 0, 100% 75%, 100% 100%)'}}
         aria-hidden="true"
       />
     </section>
