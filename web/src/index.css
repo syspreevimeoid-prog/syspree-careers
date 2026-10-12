@@ -6,9 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Matches syspree.com: Georgia throughout, #4A4A4A body copy */
 body {
-  color: #222;
-  font-family: 'Playfair Display', Georgia, serif;
+  color: #4a4a4a;
+  font-family: Georgia, Times, serif;
 }
 
 /* Form controls don't inherit the body font in browsers by default - match them up
