@@ -1,26 +1,29 @@
+// Text sizes/weights mirror the syspree.com homepage hero (measured at 1440px and 375px).
 export default function Hero({tagline, headingHighlight, headingRest, subtext, contactUrl}) {
   return (
     <section
-      className="relative overflow-hidden bg-white bg-cover bg-[position:18%_45%] bg-no-repeat md:bg-[position:center_45%] pb-32 pt-16 text-center md:pb-40 md:pt-24"
+      className="relative overflow-hidden bg-white bg-cover bg-[position:18%_45%] bg-no-repeat pb-28 pt-14 text-center md:bg-[position:center_45%] md:pb-36 md:pt-20"
       // Jumping figure + cliffs artwork, carried over from the original careers.syspree.com hero
       style={{backgroundImage: 'url(/hero-bg.png)'}}
     >
-      <div className="relative mx-auto max-w-[1700px] px-5">
-        <p className="text-base uppercase text-[#434242] md:text-[22px]">{tagline || 'See the difference SySpree makes'}</p>
+      <div className="relative mx-auto max-w-[1140px] px-5">
+        <p className="text-base font-medium uppercase leading-[1.3] text-[#434242] md:text-[17px]">
+          {tagline || 'See the difference SySpree makes'}
+        </p>
 
-        <h1 className="mt-3 text-[34px] leading-tight text-black md:text-[52px]">
-          <span className="font-bold text-brand-orange">{headingHighlight || 'Explore Opportunities:'}</span>{' '}
-          <span>{headingRest || 'Build a Future That Thrives'}</span>
+        <h1 className="mt-3 text-[30px] font-medium leading-[36px] text-black md:text-[36px] md:leading-[50.4px]">
+          <b className="text-brand-orange">{headingHighlight || 'Explore Opportunities:'}</b>{' '}
+          {headingRest || 'Build a Future That Thrives'}
         </h1>
 
-        <p className="mx-auto mt-3 max-w-[1650px] text-base uppercase leading-tight tracking-[0.04em] text-[#434242] md:text-[24px]">
+        <p className="mx-auto mt-3 max-w-[900px] text-base font-medium uppercase leading-[1.1] tracking-[0.9px] text-[#434242] md:text-[17px]">
           {subtext ||
             'Discover roles that empower professionals to grow, innovate, and excel in a dynamic and competitive environment.'}
         </p>
 
         <a
           href={contactUrl || 'https://syspree.com/contact/'}
-          className="mt-12 inline-block rounded-full bg-brand-orange px-14 py-5 text-lg leading-none text-white transition hover:bg-brand-deep md:mt-20 md:text-[22px]"
+          className="mt-10 inline-block rounded-[50px] bg-brand-orange px-8 py-4 text-lg leading-none text-white transition hover:bg-brand-deep md:mt-12 md:p-[25px] md:px-10 md:text-[23px]"
         >
           Contact Us
         </a>
