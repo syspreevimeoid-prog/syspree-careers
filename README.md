@@ -9,6 +9,14 @@ studio/   Sanity Studio — content editing UI (job postings, taxonomy, applicat
 web/      Public site (React) + /api/apply.js serverless function
 ```
 
+Shortcuts from this top folder:
+
+```bash
+npm run dev       # careers website  -> http://localhost:5173
+npm run studio    # Sanity Studio    -> http://localhost:3333
+npm run build     # production build of the website
+```
+
 ## 1. Set up Sanity (content backend)
 
 ```bash

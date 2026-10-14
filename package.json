@@ -1,0 +1,11 @@
+{
+  "name": "careers-syspree",
+  "private": true,
+  "description": "SySpree careers site (web/) and Sanity Studio (studio/). Run these from this folder.",
+  "scripts": {
+    "dev": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "studio": "npm --prefix studio run dev",
+    "install:all": "npm --prefix web install && npm --prefix studio install"
+  }
+}
