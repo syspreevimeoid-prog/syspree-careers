@@ -1,3 +1,6 @@
+// WARNING: already run (2026-10). Re-running OVERWRITES these 8 job postings with the
+// text below, discarding any edits made in the Studio since. Edit jobs in the Studio.
+//
 // Migrates the real, currently-live postings from careers.syspree.com into Sanity,
 // and removes the two sample/placeholder postings from seed.mjs.
 //
@@ -16,8 +19,10 @@ if (!projectId || !token) {
 
 const client = createClient({projectId, dataset, token, apiVersion: '2024-01-01', useCdn: false})
 
+// Studio requires a unique _key on every rich-text block and span ("Missing keys" otherwise).
+const newKey = () => Math.random().toString(36).slice(2, 14)
 function block(text) {
-  return [{_type: 'block', style: 'normal', children: [{_type: 'span', text}]}]
+  return [{_type: 'block', _key: newKey(), style: 'normal', markDefs: [], children: [{_type: 'span', _key: newKey(), text, marks: []}]}]
 }
 const ref = (id) => ({_type: 'reference', _ref: id})
 const locRefs = (...ids) => ids.map((id, i) => ({...ref(`careerLocation-${id}`), _key: `loc${i}`}))

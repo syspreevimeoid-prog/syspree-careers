@@ -1,3 +1,6 @@
+// WARNING: for a brand-new, empty dataset only. Re-running OVERWRITES Site Settings,
+// categories, job types and locations with the values below.
+//
 // Creates sample taxonomy documents + a couple of example job postings so the
 // site isn't empty on first run. Content is original placeholder copy, not
 // copied from any live posting. Safe to run multiple times (upserts by _id).
@@ -54,8 +57,10 @@ async function upsertTaxonomy(type, docs) {
   console.log(`Upserted ${docs.length} ${type} documents`)
 }
 
+// Studio requires a unique _key on every rich-text block and span ("Missing keys" otherwise).
+const newKey = () => Math.random().toString(36).slice(2, 14)
 function block(text) {
-  return [{_type: 'block', style: 'normal', children: [{_type: 'span', text}]}]
+  return [{_type: 'block', _key: newKey(), style: 'normal', markDefs: [], children: [{_type: 'span', _key: newKey(), text, marks: []}]}]
 }
 
 async function seedJobs() {
