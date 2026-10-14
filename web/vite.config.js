@@ -32,5 +32,7 @@ function localApi() {
 export default defineConfig(({mode}) => {
   // Expose server-only vars (SANITY_API_TOKEN, SMTP_*) from web/.env to the local API.
   Object.assign(process.env, loadEnv(mode, process.cwd(), ''))
-  return {plugins: [react(), localApi()]}
+  // Fixed port: http://localhost:5190 is the origin allowed in Sanity's CORS settings
+  // for project 4req6z9k. Other ports get blocked ("Request error while attempting to reach...").
+  return {plugins: [react(), localApi()], server: {port: 5190, strictPort: true}}
 })

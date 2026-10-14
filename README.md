@@ -12,7 +12,7 @@ web/      Public site (React) + /api/apply.js serverless function
 Shortcuts from this top folder:
 
 ```bash
-npm run dev       # careers website  -> http://localhost:5173
+npm run dev       # careers website  -> http://localhost:5190 (the port allowed in Sanity CORS)
 npm run studio    # Sanity Studio    -> http://localhost:3333
 npm run build     # production build of the website
 ```
